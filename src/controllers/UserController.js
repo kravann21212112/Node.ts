@@ -4,7 +4,11 @@ class UserController {
   async getAllUsers(req, res) {
     try {
       const users = await User.getAll()
-      res.json(users)
+      res.json({
+        success: true,
+        message: "All users retrieved successfully",
+        data: users,
+      })
     } catch (error) {
       res.status(500).json({ message: error.message })
     }
@@ -19,7 +23,11 @@ class UserController {
       }
 
       const user = await User.create(name)
-      res.status(201).json(user)
+      res.status(201).json({
+        success: true,
+        message: "User created successfully",
+        data: user,
+      })
     } catch (error) {
       res.status(500).json({ message: error.message })
     }

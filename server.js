@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.send('My name is Kravann yorm Im come from cambodia and Im 22 years old')
 })
 
 app.use('/users', userRoutes)
