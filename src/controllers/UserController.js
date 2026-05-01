@@ -32,7 +32,6 @@ class UserController {
       res.status(500).json({ message: error.message })
     }
   }
-
   async updateUser(req, res) {
     try {
       const { id } = req.params
