@@ -1,6 +1,7 @@
 import express from 'express'
 import db from './src/config/db.js'
 import userRoutes from './src/routes/userRoutes.js'
+import productRoutes from './src/routes/productRoutes.js'
 
 const app = express()
 app.use(express.json())
@@ -10,6 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', userRoutes)
+app.use('/products', productRoutes)
 
 const startServer = async () => {
   try {
